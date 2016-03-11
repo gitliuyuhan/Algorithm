@@ -18,6 +18,7 @@ typedef struct bound
 
 std::stack<Bound>    s;
 
+//一趟排序
 int quikPass(int a[],int low,int high)
 {
     int key = a[low];
@@ -51,13 +52,13 @@ void quikSort(int a[],int low,int high)
         {
             bd.low = low;
             bd.high = h-1;
-            s.push(bd);
+            s.push(bd); //将边界入栈
         }
         if(h+1 < high)
         {
             bd.low = h+1;
             bd.high = high;
-            s.push(bd);
+            s.push(bd); //将另一半边界入栈
         }
     }
 }
